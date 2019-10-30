@@ -4,9 +4,11 @@
  * and open the template in the editor.
  */
 package multi.thread;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.logging.Level;
@@ -232,25 +234,27 @@ public class Form extends javax.swing.JFrame {
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
         JFrame frame = new JFrame("JOptionPane showMessageDialog example");
+        //get Port
         String portNumber = txtPort.getText();
-        System.out.println(portNumber);
-      
-         
+        // check null port
         while(portNumber.isEmpty()){
-           JOptionPane.showMessageDialog(frame,
-        "Port not null"
-                   break;
-      );
+           JOptionPane.showMessageDialog(frame,"Port is not null.","Warning",JOptionPane.WARNING_MESSAGE);
+           break;
         }
         
-     /*
+        int port = Integer.parseInt(portNumber);	
+        
+        
         try {
             ServerSocket serverSocket = new ServerSocket(port);
-             System.out.println("Create Server");
+            System.out.println("Create Server");
+         
+                 
         } catch (IOException ex) {
             Logger.getLogger(Form.class.getName()).log(Level.SEVERE, null, ex);
         }
-        */
+        
+        
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
